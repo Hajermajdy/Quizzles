@@ -96,8 +96,7 @@ Image.asset('images/q2.jpg',fit: BoxFit.cover),
 "img":
       Image.network(
         "https://img.freepik.com/free-vector/thoughtful-woman-with-laptop-looking-big-question-mark_1150-39362.jpg",
-        fit: BoxFit.cover,
-      ),
+        fit: BoxFit.cover,),
  */
 
 

@@ -69,6 +69,116 @@ class CardLevel extends StatelessWidget {
         Icon(Icons.star,color: Colors.yellow),
       ]
     },
+    "04": {
+      "empty": [
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "very good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "Excellence": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+      ]
+    },
+    "05": {
+      "empty": [
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "very good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "Excellence": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+      ]
+    },
+    "06": {
+      "empty": [
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "very good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "Excellence": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+      ]
+    },
+    "07": {
+      "empty": [
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "very good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "Excellence": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+      ]
+    },
+    "08": {
+      "empty": [
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "very good": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star_border_outlined,color: Colors.yellow),
+      ],
+      "Excellence": [
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+        Icon(Icons.star,color: Colors.yellow),
+      ]
+    }
   };
 
 

@@ -68,7 +68,7 @@ class _QuestionLevel3ScreenState extends State<QuestionLevel3Screen> {
                     decoration:  BoxDecoration(
                         borderRadius: BorderRadius.circular(30) // Adjust the radius as needed
                     ),
-                    // child: dataModel!.level3![index].img,
+                    child: dataModel!.level3![index].img,
                   ),
                   SizedBox(
                     height: 10,

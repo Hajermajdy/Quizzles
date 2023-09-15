@@ -1,10 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:quizzles/data/data_model.dart';
+import 'package:quizzles/screens/result_screen.dart';
 import '../components/question_quesstions.dart';
+import '../components/style_question_questions.dart';
 
-class QuestionLevel8Screen extends StatelessWidget {
+class QuestionLevel8Screen extends StatefulWidget {
 
+  @override
+  State<QuestionLevel8Screen> createState() => _QuestionLevel8ScreenState();
+}
+
+class _QuestionLevel8ScreenState extends State<QuestionLevel8Screen> {
+
+  DataModel? dataModel;
   Color backGroundColor = Color(0xff150734);
-  final controller = PageController(initialPage: 0);
+
+  PageController? controller = PageController(initialPage: 0);
+  bool isPressed = false;
+  Color isTrue = Colors.green;
+  Color isWrong = Colors.red;
+  Color colorbtn = Colors.cyanAccent;
+  int score = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    dataModel = DataModel.fromJson(allData);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,123 +37,139 @@ class QuestionLevel8Screen extends StatelessWidget {
           backgroundColor: backGroundColor,
           elevation:0,
         ),
-        body: PageView(
-
-          physics: NeverScrollableScrollPhysics(),
+        body: PageView.builder(
+          onPageChanged: (page) {
+            setState(() {
+              isPressed = false;
+            });
+          },
           controller: controller,
-          children: [
-            // QuestionQuestions(
-            //   numQue: "01/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q27.jpg',fit: BoxFit.cover),
-            //   solustion1: "b",
-            //   solustion2: "e", //correct
-            //   solustion3: "d",
-            //   solustion4: "c",
-            // ),
-            // QuestionQuestions(
-            //   numQue: "02/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q28.jpg',fit: BoxFit.cover),
-            //   solustion1: "a",
-            //   solustion2: "e",
-            //   solustion3: "c",  //correct
-            //   solustion4: "b",
-            // ),
-            // QuestionQuestions(
-            //   numQue: "03/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q29.jpg',fit: BoxFit.cover),
-            //   solustion1: "a",
-            //   solustion2: "e",
-            //   solustion3: "c",
-            //   solustion4: "b",  //correct
-            // ),
-            // QuestionQuestions(
-            //   numQue: "04/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q30.jpg',fit: BoxFit.cover),
-            //   solustion1: "e",
-            //   solustion2: "b",  //correct
-            //   solustion3: "c",
-            //   solustion4: "a",
-            // ),
-            // QuestionQuestions(
-            //   numQue: "05/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q31.jpg',fit: BoxFit.cover),
-            //   solustion1: "a",
-            //   solustion2: "e",
-            //   solustion3: "c", //correct
-            //   solustion4: "d",
-            // ),
-            // QuestionQuestions(
-            //   numQue: "06/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q31.jpg',fit: BoxFit.cover),
-            //   solustion1: "e",
-            //   solustion2: "c", //correct
-            //   solustion3: "b",
-            //   solustion4: "d",
-            // ),
-            // QuestionQuestions(
-            //   numQue: "07/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q33.jpg',fit: BoxFit.cover),
-            //   solustion1: "a",  //correct
-            //   solustion2: "c",
-            //   solustion3: "d",
-            //   solustion4: "e",
-            // ),
-            // QuestionQuestions(
-            //   numQue: "08/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q34.jpg',fit: BoxFit.cover),
-            //   solustion1: "b",
-            //   solustion2: "c",
-            //   solustion3: "a",
-            //   solustion4: "e", //correct
-            // ),
-            // QuestionQuestions(
-            //   numQue: "09/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q35.jpg',fit: BoxFit.cover),
-            //   solustion1: "a",
-            //   solustion2: "c", //correct
-            //   solustion3: "e",
-            //   solustion4: "d",
-            // ),
-            // QuestionQuestions(
-            //   numQue: "10/10",
-            //   textQue: " ",
-            //   controller: controller,
-            //   img:
-            //   Image.asset('images/q36.jpg',fit: BoxFit.cover),
-            //   solustion1: "b",
-            //   solustion2: "d",//correct
-            //   solustion3: "e",
-            //   solustion4: "c",
-            // ),
-          ],
+          itemCount: dataModel!.level8!.length,
+          physics: NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) {
+            return Container(
+              color: backGroundColor,
+              padding: EdgeInsets.all(15),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text("${index+1}/10",style: TextStyle(color: Colors.cyanAccent),textAlign: TextAlign.start,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(dataModel!.level8![index].question!,style: TextStyle(color: Colors.white,fontSize: 18),),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    width: 270,
+                    height: 180,
+                    clipBehavior: Clip.antiAlias,
+                    decoration:  BoxDecoration(
+                        borderRadius: BorderRadius.circular(30) // Adjust the radius as needed
+                    ),
+                    child: dataModel!.level8![index].img,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  for(int i = 0; i < 4; i++)
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: backGroundColor,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(7),
+                              side: BorderSide(
+                                  color: isPressed?
+                                  dataModel!.level8![index].answer![i] ? isTrue : isWrong : backGroundColor,
+                                  width:2,
+                                  style: BorderStyle.solid
+                              )
+                          )
+                      ),
+                      onPressed: () {
+                        if(dataModel!.level8![index].answer![i]  && isPressed == false){
+                          setState(() {
+                            score+=10;
+                          });
+                        }
+                        setState(() {
+                          isPressed = true;
+                        });
+                        print(score);
+                      },
+                      child:Row(
+                        children: [
+                          CircleAvatar(
+                            child: Text("0${i+1}",style: TextStyle(fontSize: 13,color: Colors.white,fontWeight: FontWeight.bold)),
+                            radius: 13,
+                            backgroundColor: Colors.deepPurple[400],
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(dataModel!.level8![index].choise![i],style: TextStyle(color:Colors.white)),
+                        ],
+                      ),
+                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.deepPurple[400],
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12)
+                            )
+                        ),
+                        onPressed: () => controller!.previousPage(
+                            duration: Duration(seconds: 1),
+                            curve: Curves.decelerate
+                        ),
+                        child: Text("Previous",style: TextStyle(color: Colors.white,fontSize: 12),),
+                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.only(
+                                  right: 30,
+                                  left: 30
+                              ),
+                              backgroundColor:
+                              index+1 == dataModel!.level8!.length ?
+                              Colors.cyan[200] : Colors.deepPurple[400],
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(12)
+                              )
+                          ),
+                          onPressed: () {
+                            index+1 == dataModel!.level2!.length?
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context)=>ResultScreen(finalScore: score,level: "level8",)),
+                            ):
+                            controller!.nextPage(
+                                duration: Duration(seconds: 1),
+                                curve: Curves.decelerate
+                            );
+                          },
+                          child: Text(
+                            index+1 == dataModel!.level8!.length ?
+                            "Result" : "Next",
+                            style: TextStyle(
+                                color: index+1 == dataModel!.level8!.length ?
+                                Colors.grey[900] : Colors.white,
+                                fontSize: 12),
+                          )
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
+          },
         )
     );
   }
 }
+

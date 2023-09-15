@@ -105,32 +105,36 @@ class _LevelsScreenState extends State<LevelsScreen> {
               page: QuestionLevel3Screen(),
               finalScore: widget.scores!["level3"],
             ),
-
-            // CardLevel(
-            //     path: "images/level 4.jpg",
-            //     numLevel: "04",
-            //     page: QuestionLevel4Screen(),
-            // ),
-            // CardLevel(
-            //     path: "images/level 5.jpg",
-            //     numLevel: "05",
-            //     page: QuestionLevel5Screen(),
-            // ),
-            // CardLevel(
-            //     path: "images/level 6.jpg",
-            //     numLevel: "06",
-            //     page: QuestionLevel6Screen(),
-            // ),
-            // CardLevel(
-            //     path: "images/level 7.jpg",
-            //     numLevel: "07",
-            //     page: QuestionLevel7Screen(),
-            // ),
-            // CardLevel(
-            //     path: "images/level 8.jpg",
-            //     numLevel: "08",
-            //     page: QuestionLevel8Screen(),
-            // ),
+            CardLevel(
+                path: "images/level 4.jpg",
+                numLevel: "04",
+                page: QuestionLevel4Screen(),
+                finalScore: widget.scores!["level4"],
+            ),
+            CardLevel(
+                path: "images/level 5.jpg",
+                numLevel: "05",
+                page: QuestionLevel5Screen(),
+                finalScore: widget.scores!["level5"],
+            ),
+            CardLevel(
+                path: "images/level 6.jpg",
+                numLevel: "06",
+                page: QuestionLevel6Screen(),
+                finalScore: widget.scores!["level6"],
+            ),
+            CardLevel(
+                path: "images/level 7.jpg",
+                numLevel: "07",
+                page: QuestionLevel7Screen(),
+                finalScore: widget.scores!["level7"],
+            ),
+            CardLevel(
+                path: "images/level 8.jpg",
+                numLevel: "08",
+                page: QuestionLevel8Screen(),
+                finalScore: widget.scores!["level8"],
+            ),
           ],
         ),
       )
